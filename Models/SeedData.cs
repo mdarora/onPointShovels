@@ -29,6 +29,7 @@ namespace OnPointShovels.Models
                         Weight = 3,
                         Height = 40,
                         Price = 34.99M,
+                        Rating = 2
                     },
                     new Shovel
                     {
@@ -38,6 +39,7 @@ namespace OnPointShovels.Models
                         Weight = 2,
                         Height = 42,
                         Price = 22.99M,
+                        Rating = 3
                     },
                     new Shovel
                     {
@@ -47,6 +49,7 @@ namespace OnPointShovels.Models
                         Weight = 4,
                         Height = 50,
                         Price = 24.99M,
+                        Rating = 2
                     },
                     new Shovel
                     {
@@ -56,6 +59,7 @@ namespace OnPointShovels.Models
                         Weight = 4,
                         Height = 29,
                         Price = 23.49M,
+                        Rating = 3
                     },
                     new Shovel
                     {
@@ -65,6 +69,7 @@ namespace OnPointShovels.Models
                         Weight = 4,
                         Height = 53,
                         Price = 29.99M,
+                        Rating = 4
                     },
                     new Shovel
                     {
@@ -74,6 +79,7 @@ namespace OnPointShovels.Models
                         Weight = 2,
                         Height = 26,
                         Price = 56.89M,
+                        Rating = 4
                     },
                     new Shovel
                     {
@@ -83,6 +89,7 @@ namespace OnPointShovels.Models
                         Weight = 2,
                         Height = 27,
                         Price = 27.99M,
+                        Rating = 5
                     },
                     new Shovel
                     {
@@ -92,6 +99,7 @@ namespace OnPointShovels.Models
                         Weight = 2,
                         Height = 22,
                         Price = 19.99M,
+                        Rating = 2
                     },
                     new Shovel
                     {
@@ -101,6 +109,7 @@ namespace OnPointShovels.Models
                         Weight = 4,
                         Height = 34,
                         Price = 49.98M,
+                        Rating = 1
                     },
                     new Shovel
                     {
@@ -110,6 +119,7 @@ namespace OnPointShovels.Models
                         Weight = 2,
                         Height = 21,
                         Price = 51.99M,
+                        Rating = 4
                     }
                 );
                 context.SaveChanges();
