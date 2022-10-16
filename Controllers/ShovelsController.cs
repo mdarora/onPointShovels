@@ -20,9 +20,17 @@ namespace onPointShovels.Controllers
         }
 
         // GET: Shovels
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Shovel.ToListAsync());
+        public async Task<IActionResult> Index(string searchString)
+        {   // getting a search string and filtering list
+            var shovels = from s in _context.Shovel
+                         select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                shovels = shovels.Where(s => s.Title.Contains(searchString));
+            }
+
+            return View(await shovels.ToListAsync());
         }
 
         // GET: Shovels/Details/5
