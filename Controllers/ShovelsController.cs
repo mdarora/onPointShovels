@@ -20,17 +20,31 @@ namespace onPointShovels.Controllers
         }
 
         // GET: Shovels
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string shovelType, string searchString)
         {   // getting a search string and filtering list
-            var shovels = from s in _context.Shovel
-                         select s;
+            IQueryable<string> typeQuery = from s in _context.Shovel
+                                           orderby s.Type
+                                           select s.Type;
+
+            var shovels = from shovel in _context.Shovel select shovel;
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 shovels = shovels.Where(s => s.Title.Contains(searchString));
             }
+            // filter added for type of shovel as well
+            if (!string.IsNullOrEmpty(shovelType))
+            {
+                shovels = shovels.Where(x => x.Type == shovelType);
+            }
 
-            return View(await shovels.ToListAsync());
+            var shovelTypeVM = new ShovelTypeViewModel
+            {
+                Types = new SelectList(await typeQuery.Distinct().ToListAsync()),
+                Shovels = await shovels.ToListAsync()
+            };
+
+            return View(shovelTypeVM);
         }
 
         // GET: Shovels/Details/5
