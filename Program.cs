@@ -16,6 +16,7 @@ namespace onPointShovels
     {
         public static void Main(string[] args)
         {
+            // Seed data initializer
             var host = CreateHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())

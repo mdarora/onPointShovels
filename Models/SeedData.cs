@@ -7,7 +7,7 @@ using System.Linq;
 namespace OnPointShovels.Models
 {
     public static class SeedData
-    {
+    {   // Seed data for the shovel products
         public static void Initialize(IServiceProvider serviceProvider)
         {
             using (var context = new OnPointShovelsContext(
