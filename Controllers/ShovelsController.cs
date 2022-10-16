@@ -76,7 +76,7 @@ namespace onPointShovels.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Type,Color,Weight,Height,Price")] Shovel shovel)
+        public async Task<IActionResult> Create([Bind("Id,Title,Type,Color,Weight,Height,Price,Rating")] Shovel shovel)
         {
             if (ModelState.IsValid)
             {
@@ -108,7 +108,7 @@ namespace onPointShovels.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Type,Color,Weight,Height,Price")] Shovel shovel)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Type,Color,Weight,Height,Price,Rating")] Shovel shovel)
         {
             if (id != shovel.Id)
             {
