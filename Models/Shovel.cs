@@ -21,5 +21,8 @@ namespace OnPointShovels.Models
         public int Height { get; set; }     // height of the product in inces
 
         public decimal Price { get; set; }  // price of the product
+
+        //adding new field
+        public int Rating { get; set; }  // Rating for the product
     }
 }
