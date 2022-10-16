@@ -1,4 +1,4 @@
-﻿@model IEnumerable<OnPointShovels.Models.Shovel>
+﻿@model OnPointShovels.Models.ShovelTypeViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -10,7 +10,11 @@
     <a asp-action="Create">Create New</a>
     <form asp-controller="Shovels" asp-action="Index">
         <p>
-            Title: <input type="text" name="SearchString" />
+            <select asp-for="ShovelType" asp-items="Model.Types">
+                <option value="">All</option>
+            </select>
+
+            Title: <input type="text" asp-for="SearchString" />
             <input type="submit" value="Filter" />
         </p>
     </form>
@@ -20,28 +24,29 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Title)
+                @Html.DisplayNameFor(model => model.Shovels[0].Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Type)
+                @Html.DisplayNameFor(model => model.Shovels[0].Type)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Color)
+                @Html.DisplayNameFor(model => model.Shovels[0].Color)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Weight)
+                @Html.DisplayNameFor(model => model.Shovels[0].Weight)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Height)
+                @Html.DisplayNameFor(model => model.Shovels[0].Height)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                @Html.DisplayNameFor(model => model.Shovels[0].Price)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model.Shovels)
+        {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
