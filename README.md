@@ -40,3 +40,7 @@
 	-Added shovels product page link on index page. <br>
 4:57
 	-Created a new About us page. <br>
+5:44
+	-couldn't figure out what colors to use so now i'll be using dark theme
+6:20
+	-Added dark theme to the pages and replaced some link text with icons
