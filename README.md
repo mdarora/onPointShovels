@@ -36,3 +36,7 @@
 	-Added new field rating and updated all files to recognise this new field. <br>
 3:47
 	-Added validation to the shovel data fields. <br>
+4:34
+	-Added shovels product page link on index page. <br>
+4:57
+	-Created a new About us page. <br>
