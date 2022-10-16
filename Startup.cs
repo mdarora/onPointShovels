@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using onPointShovels.Data;
+using OnPointShovels.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,11 +28,12 @@ namespace onPointShovels
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            // Registering new onPointShovel Database Context
+            services.AddDbContext<OnPointShovelsContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("OnPointShovelsContext")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<OnPointShovelsContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
