@@ -44,3 +44,11 @@
 	-couldn't figure out what colors to use so now i'll be using dark theme
 6:20
 	-Added dark theme to the pages and replaced some link text with icons
+
+
+17-10-2022
+	
+9:03
+	-Styling done , some with inline css, some with external css, some with thw help of bootstrap
+9:16
+	-Added data on About us containing fictional details of a fictional company
